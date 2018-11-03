@@ -1,0 +1,102 @@
+@import '../../assets/styles/user/helpers/variable';
+
+$fontsize_name_company: 21px;
+
+$menu_ten_KhoangCach:60px;
+$menu_line_width_hover:35%;
+$menu_line_height_hover:2px;
+$color_hover_line: $color_white;
+
+.container{
+    position: relative;
+}
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#myNavbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    color: $color_white;
+}
+
+// Logo
+.logo{
+    background: url('../../assets/images/user/logo_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 74px;
+    height: 110px;
+}
+.myLogo{
+    position: absolute;
+    top: 0;
+    width:74px;
+    left: 50%;
+    transform: translateX(-50%);
+    .name_company{
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight:600; 
+        font-size: $fontsize_name_company;
+    }
+}
+
+
+.myMenu{
+    li{
+        display: inline-block;
+    }
+}
+
+// menu
+.link{
+    span{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            height: 0;
+            width: 0;
+            transition: all 0.2s ease-in-out;  
+        }
+    }
+    &:hover{
+        span{
+            cursor: pointer;
+        }
+        span::before{
+            width: $menu_line_width_hover;
+            height: $menu_line_height_hover;
+            background: $color_hover_line
+        }
+    }
+}
+
+.navbar-nav{
+   margin-top: 32px;
+}
+.navbar-left{
+    margin-right: $menu_ten_KhoangCach;
+    li{
+        margin-right: 33px;
+    }
+}
+.navbar-right{
+    margin-left: $menu_ten_KhoangCach;
+    li{
+        margin-left: 33px;
+    }
+}
+
+
+
+

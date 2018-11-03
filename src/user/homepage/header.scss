@@ -1,0 +1,57 @@
+
+@import '../../assets/styles/user/helpers/variable';
+$images_count: 8;
+
+header{
+    height: 640px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, $color_main 0%, $color_white 100%);
+    overflow: hidden;
+    color: $color_white;
+}
+
+.slogan{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    line-height: 1;
+    top: 200px;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+#home-header-illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/images/user/home_header_illustration_bg.png);
+    background-size: auto 480px;
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    top: 0;
+    opacity: 1;
+}
+
+#home-header-illustration-group{
+    height: 480px;
+    width: 2333px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1166px;
+}
+
+
+
+@for $i from 1 through $images_count {
+    .#{'img'+$i} {
+        background-image: url(../../assets/images/user/home_header_illustration_#{$i}.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;   
+        height: 100%;
+        border:0;
+    }
+}
