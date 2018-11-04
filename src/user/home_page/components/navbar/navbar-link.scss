@@ -6,6 +6,13 @@ $color_hover_line: $color_white;
 $menu_ten_KhoangCach:60px;
 
 
+a{
+    color:$color_white;
+    &:hover{
+        color: $color_white;
+    }
+}
+
 .myMenu{
     li{
         display: inline-block;
@@ -42,13 +49,13 @@ $menu_ten_KhoangCach:60px;
 }
 .navbar-left{
     margin-right: $menu_ten_KhoangCach;
-    li{
+    a{
         margin-right: 33px;
     }
 }
 .navbar-right{
     margin-left: $menu_ten_KhoangCach;
-    li{
+    a{
         margin-left: 33px;
     }
 }

@@ -12,20 +12,20 @@ class NavbarLink extends Component {
                     <div className="navbar-left">
                         <ul className="list-unstyled d-block">
                             <NavLink to="/introduce" className="link">
-                                Introduce
+                                <span>Introduce</span> 
                             </NavLink>
                             <NavLink to="/trips" className="link">
-                                Trips
+                                <span>Trips</span>
                             </NavLink>
                         </ul>
                     </div>
                     <div className="navbar-right">
                         <ul className="list-unstyled d-block">
                             <NavLink to="/support" className="link">
-                                Support
+                                <span>Support</span>
                             </NavLink>
                             <NavLink to="/login" className="link">
-                                Login
+                                <span>Login</span>
                             </NavLink>
                         </ul>
                     </div>
