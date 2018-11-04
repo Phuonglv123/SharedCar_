@@ -4,7 +4,7 @@ import './header.scss';
 import Parallax from 'parallax-js'
 
 // Components
-import Navbar from '../../navbar/navbar';
+import Navbar from '../components/navbar/navbar';
 
 
 class Header extends Component {

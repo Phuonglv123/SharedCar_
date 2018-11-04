@@ -3,9 +3,7 @@ import './App.scss';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 // Components
-import HomePage from './user/homepage/homepage';
-import AdminPage from './admin/adminpage';
-
+import routes from './routes/routes';
 
 class App extends Component {
 
@@ -13,11 +11,27 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    <Route path="/" exact component={HomePage}/>
-                    <Route path="/admin" exact component={AdminPage}/>
+                    {this.showRoutes(routes)}
                 </div>
             </Router>
         );
+    }
+
+    showRoutes = (routes) => {
+        let result = null;
+        if(routes.length > 0){
+            result = routes.map((route,index) => {
+                return (
+                    <Route 
+                        key={index}
+                        path={route.path} 
+                        exact={route.exact} 
+                        component={route.main}
+                    />
+                );
+            })
+        }
+        return result;
     }
 }
 
