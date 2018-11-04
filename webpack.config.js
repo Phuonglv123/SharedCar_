@@ -19,7 +19,8 @@ const vendor_lib = [
 
 const devServer = {
     port: 3500,
-    open: true
+    open: true,
+    historyApiFallback: true // enable router react dom
 }
 
 module.exports = {
