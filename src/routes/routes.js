@@ -10,37 +10,27 @@ import SupportPage from '../user/support_page/support_page';
 
 
 const routes = [
+    // Admin
     {
-        path: '/',
-        exact: true,
-        main: () => <HomePage/>
-    },
-    {
-        path: '/admin',
-        exact: true,
-        main: () => <AdminPage/>
-    },
-    {
-        path: '/introduce',
-        exact: true,
-        main: () => <IntroducePage/>
-    },
-    {
-        path: '/trips',
-        exact: true,
-        main: () => <TripsPage/>
-    },
-    {
-        path: '/login',
-        exact: true,
-        main: () => <LoginPage/>
-    },
-    {
-        path: '/support',
-        exact: true,
-        main: () => <SupportPage/>
+        path: '/admin', exact: true, main: () => <AdminPage/>
     },
 
+    // User
+    {
+        path: '/', exact: true, main: () => <HomePage/>
+    },
+    {
+        path: '/introduce', exact: true, main: () => <IntroducePage/>
+    },
+    {
+        path: '/trips', exact: true, main: () => <TripsPage/>
+    },
+    {
+        path: '/login', exact: true, main: () => <LoginPage/>
+    },
+    {
+        path: '/support', exact: true, main: () => <SupportPage/>
+    },
 ]
 
 export default routes;
