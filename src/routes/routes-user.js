@@ -1,7 +1,6 @@
 import React from 'react';
 
 // Components
-import AdminPage from '../admin/admin_page';
 import HomePage from '../user/home_page/home_page';
 import IntroducePage from '../user/introduce_page/introduce_page';
 import TripsPage from '../user/trips_page/trips_page';
@@ -9,13 +8,7 @@ import LoginPage from '../user/login_page/login_page';
 import SupportPage from '../user/support_page/support_page';
 
 
-const routes = [
-    // Admin
-    {
-        path: '/admin', exact: true, main: () => <AdminPage/>
-    },
-
-    // User
+const routesUser = [
     {
         path: '/', exact: true, main: () => <HomePage/>
     },
@@ -33,4 +26,4 @@ const routes = [
     },
 ]
 
-export default routes;
+export default routesUser;

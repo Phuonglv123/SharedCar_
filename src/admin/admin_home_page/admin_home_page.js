@@ -1,16 +1,13 @@
-
 import React, { Component } from 'react';
 
-// Components
-
-class AdminPage extends Component{
+class AdminHomePage extends Component {
     render() {
         return (
             <div>
-                Admin Page
+                AdminPage
             </div>
         );
     }
 }
 
-export default AdminPage;
+export default AdminHomePage;

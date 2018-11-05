@@ -20,7 +20,7 @@ const vendor_lib = [
 const devServer = {
     port: 3500,
     open: true,
-    historyApiFallback: true // enable router react dom
+    historyApiFallback: true // enable router admin
 }
 
 module.exports = {
@@ -109,6 +109,7 @@ module.exports = {
         // parse template duoi khac thanh HTML
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            filename: 'index.html'
         }),
         // Extract CSS ra khoi bundle thanh file rieng
         new MiniCssExtractPlugin({

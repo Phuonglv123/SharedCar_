@@ -1,38 +1,30 @@
 import React, {Component} from 'react';
 import './App.scss';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 // Components
-import routes from './routes/routes';
-
+import RoutesAdmin from './admin/routes-admin';
+import RouteUser from './user/routes-user';
 class App extends Component {
 
     render() {
         return (
-            <Router>
                 <div className="App">
-                    {this.showRoutes(routes)}
+                    {this.redirectPage(window.location.pathname)}
                 </div>
-            </Router>
         );
     }
 
-    showRoutes = (routes) => {
-        console.log(routes);
-        let result = null;
-        if(routes.length > 0){
-            result = routes.map((route,index) => {
+    redirectPage = (pathname) => {
+        switch (pathname) {
+            case '/admin':
                 return (
-                    <Route 
-                        key={index}
-                        path={route.path} 
-                        exact={route.exact} 
-                        component={route.main}
-                    />
-                );
-            })
+                    <RoutesAdmin/>
+                )        
+            default:
+                return (
+                    <RouteUser/>
+                )    
         }
-        return result;
     }
 }
 
