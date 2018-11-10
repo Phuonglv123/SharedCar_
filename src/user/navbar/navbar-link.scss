@@ -1,9 +1,10 @@
-@import '../../../../assets/styles/user/helpers/variable';
+@import '../../assets/styles/user/helpers/variable';
 
 $menu_line_width_hover:35%;
 $menu_line_height_hover:2px;
 $color_hover_line: $color_white;
-$menu_ten_KhoangCach:60px;
+$distance_menu_logo:10px;
+$fontsize_name_company: 21px;
 
 
 a{
@@ -11,6 +12,10 @@ a{
     &:hover{
         color: $color_white;
     }
+}
+
+#collapsibleNavbar{
+    width:100%;
 }
 
 .myMenu{
@@ -47,15 +52,49 @@ a{
 .navbar-nav{
    margin-top: 32px;
 }
+
 .navbar-left{
-    margin-right: $menu_ten_KhoangCach;
+    margin-right: $distance_menu_logo;
     a{
         margin-right: 33px;
     }
 }
 .navbar-right{
-    margin-left: $menu_ten_KhoangCach;
+    margin-left: $distance_menu_logo;
     a{
         margin-left: 33px;
+    }
+}
+
+.navbar-left,.navbar-right{
+    margin-top:31px;
+}
+
+
+// Logo
+.logo{
+    background: url('../../assets/images/user/logo_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 74px;
+    height: 110px;
+}
+.myLogo{
+    position: relative;
+    .name_company{
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight:600; 
+        font-size: $fontsize_name_company;
+    }
+}
+
+
+@media (max-width:768px){
+    .navbar-left,.navbar-right{
+        display: none;
     }
 }

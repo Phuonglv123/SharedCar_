@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/user/helpers/variable';
+@import '../../assets/styles/user/helpers/variable';
 
 $animation: 0.6s; // animation speed
 $scale: 0.7; // icon scale 68/68 default
@@ -7,13 +7,13 @@ $mau_icon: $color_white;
 
 .hamburglar {
     cursor: pointer;
+    display: none;
     transform: scale($scale);
     //   margin: 40px auto;
     position: absolute;
     top: 0px;
     right: 0px;
     z-index: 1000;
-    display: block;
     width: 68px;
     height: 68px;
     background: transparent;
@@ -353,6 +353,14 @@ $mau_icon: $color_white;
     100% {
       width: 0;
       left: 36px;
+    }
+  }
+
+
+
+  @media (max-width:768px){
+    .hamburglar{
+      display: block !important;
     }
   }
   

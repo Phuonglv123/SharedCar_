@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from '../home_page/components/navbar/navbar';
 
 class IntroducePage extends Component {
     render() {

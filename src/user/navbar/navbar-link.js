@@ -7,8 +7,8 @@ class NavbarLink extends Component {
 
     render() {
         return (
-            <div className="collapse myMenu navbar-collapse" id="collapsibleNavbar">
-                <div className="navbar-nav d-flex justify-content-center w-100">
+            <div className="myMenu d-flex justify-content-center" id="collapsibleNavbar">
+                    {/* Menu left */}
                     <div className="navbar-left">
                         <ul className="list-unstyled d-block">
                             <NavLink to="/introduce" className="link">
@@ -19,6 +19,17 @@ class NavbarLink extends Component {
                             </NavLink>
                         </ul>
                     </div>
+
+                    {/* Logo */}
+                    <div className="myLogo">
+                        <div
+                            className="logo"
+                            alt="myLogo">
+                            <h4 className="name_company text-center">CYB</h4>
+                        </div>
+                    </div>
+
+                    {/* Menu right */}
                     <div className="navbar-right">
                         <ul className="list-unstyled d-block">
                             <NavLink to="/support" className="link">
@@ -29,7 +40,6 @@ class NavbarLink extends Component {
                             </NavLink>
                         </ul>
                     </div>
-                </div>
             </div>
         );
     }

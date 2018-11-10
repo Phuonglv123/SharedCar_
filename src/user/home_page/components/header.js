@@ -37,7 +37,7 @@ class Header extends Component {
                         <div data-depth="0.2" className="img6"/>
                     </div>
                 </div>
-                <Navbar/>
+                {/* <Navbar/> */}
 
                 <h1 className="slogan">
                     We ride together.

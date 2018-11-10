@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import HomePage from './home_page/home_page';
 import routesUser from '../routes/routes-user';
+import Navbar from './navbar/navbar';
 
 class RouteUser extends Component {
     render() {
         return (
             <Router>
                 <div>
-                    {this.loadRoute(routesUser)}
+                    <Navbar/>
+                   {this.loadRoute(routesUser)}
                 </div>
             </Router>
         );
     }
+
+  
 
     loadRoute = (routes) => {
         console.log(routes);

@@ -1,0 +1,29 @@
+@import '../../assets/styles/user/helpers/variable';
+
+$menu_ten_KhoangCach:60px;
+
+
+.container{
+    position: relative;
+}
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#myNavbar{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    color: $color_white;
+}
+
+
+
+
+
+
+
+

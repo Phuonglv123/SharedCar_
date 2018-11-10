@@ -36,8 +36,7 @@ class ButtonResponsive extends Component {
 
     render() {
         return (
-            <div id="navbarResponsiveButton">
-                {/* Button Menu */}
+            
                 <div id="hamburger" className="hamburglar is-close">
                     <div className="burger-icon">
                         <div className="burger-container">
@@ -76,8 +75,6 @@ class ButtonResponsive extends Component {
                         </div>
                     </div>
                 </div>
-                {/* Button Menu */}
-            </div>
 
         );
     }
