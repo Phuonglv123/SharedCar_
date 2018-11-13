@@ -1,25 +1,43 @@
 import React, {Component} from 'react';
-import '../navbar/navbar.scss';
+import {connect} from 'react-redux';
+import * as actions from '../../actions/index';
 
 // component
 import ButtonResponsive from './button-responsive';
 import NavbarLink from './navbar-link';
 
+// Scss
+import '../navbar/navbar.scss';
+
 class Navbar extends Component {
+
+    changeColorNavbar = (path) => {
+        if(path !== "/"){
+            return (
+                <nav id="myNavbar2" className="navbar changeColor">
+                    <div className="container">
+                        <ButtonResponsive/>
+                        <NavbarLink/>
+                    </div>
+                </nav>
+            )
+        } else {
+            return (
+                <nav id="myNavbar" className="navbar">
+                    <div className="container">
+                        <ButtonResponsive/>
+                        <NavbarLink/>
+                    </div>
+                </nav>
+            )
+        }
+    }
 
     render() {
         return (
-            <nav id="myNavbar" className="navbar mt-3">
-                <div className="container">                    
-
-                    {/* Toggler/collapsibe Button */}
-                    <ButtonResponsive/>
-
-                    {/* Navbar links */}
-                    <NavbarLink/>
-
-                </div>
-            </nav>
+            <div>
+                {this.changeColorNavbar(window.location.pathname)}
+            </div>
         );
     }
 }

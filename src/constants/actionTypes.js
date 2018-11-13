@@ -1,1 +1,0 @@
-export const CHANGE_NAVBAR = "CHANGE_NAVBAR";

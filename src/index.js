@@ -2,6 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { createStore, applyMiddleware } from 'redux';
+import appReducers from './reducers/index';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+
+
 // Bootstrap + jquery 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
@@ -13,7 +19,13 @@ import '@fortawesome/fontawesome-free/js/all.min';
 // my css
 import './index.scss';
 
+const store = createStore(
+    appReducers,
+)
+
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 )

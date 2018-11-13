@@ -1,0 +1,48 @@
+@import '../../../assets/styles/user/helpers/variable';
+
+#WhyChooseUs{
+    padding: $padding_section;
+    background: $color_silver;
+    overflow: hidden;
+}
+
+.title_WhyChooseUs{
+    color: $color_font_second2;
+}
+
+.div2_whychooseus{
+    padding:$padding_div_title;
+}
+
+
+
+.divImg_whychooseus{
+    position: relative;
+}
+
+.img_WhyChooseUs{
+    background: url('../../../assets/images/user/car.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 190px;
+}
+
+
+
+@media (max-width:991px){
+    .img_WhyChooseUs{
+
+    }
+    .img_WhyChooseUs2{
+        right: -270px;
+        top: -320px;
+    }
+}
+
+@media (max-width:768px){
+    .img_WhyChooseUs,.img_WhyChooseUs2{
+        display: none!important;
+    }
+}

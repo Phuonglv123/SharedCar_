@@ -1,0 +1,25 @@
+@import '../../../assets/styles/user/helpers/variable';
+$images_count:3;
+
+@for $i from 1 through $images_count {
+    .#{'icon_feature_'+$i} {
+        background-image: url(../../../assets/images/user/home_section_a_icon_#{$i}.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;   
+        height: 150px;
+        border:0;
+    }
+}
+
+#Features{
+    padding: $padding_section;
+    color: $color_font_main;
+}
+
+.title_icon{
+    font-size: 20px;
+    color:$color_font_second2;
+    font-weight: 700;
+}

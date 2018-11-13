@@ -1,0 +1,32 @@
+@import '../../../assets/styles/user/helpers/variable';
+
+#myEvent{
+    padding: $padding_section;
+    background: $color_main;
+}
+
+.icon_myevent{
+    background: url('../../../assets/images/user/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 263px;
+    height: 200px;
+    margin: 0 auto;
+}
+.icon_myevent2{
+    background: url('../../../assets/images/user/home_partner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 263px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.title_event{
+    color:white;
+}
+.content_event{
+    color:white;
+}

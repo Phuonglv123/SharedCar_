@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actions from '../../actions/index';
 
 import './navbar-link.scss'
 
@@ -7,43 +9,44 @@ class NavbarLink extends Component {
 
     render() {
         return (
-            <div className="myMenu d-flex justify-content-center" id="collapsibleNavbar">
-                    {/* Menu left */}
-                    <div className="navbar-left">
-                        <ul className="list-unstyled d-block">
+            <div className="myMenu d-flex justify-content-between" id="collapsibleNavbar">
+                {/* Logo */}
+                <NavLink to="/" className="myLogo d-flex">
+                    <div className="logo" alt="myLogo"></div>
+                    <h3 className="name_company d-flex align-items-center font-weight-bold">
+                        <span className="">CYBER</span>
+                    </h3>
+                </NavLink>
+
+                {/* Menu left */}
+                <div className="menuNavbar d-flex align-items-center">
+                    <ul className="list-unstyled m-0">
+                        <li>
                             <NavLink to="/introduce" className="link">
-                                <span>Introduce</span> 
+                                <span>Introduce</span>
                             </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/trips" className="link">
                                 <span>Trips</span>
                             </NavLink>
-                        </ul>
-                    </div>
-
-                    {/* Logo */}
-                    <div className="myLogo">
-                        <div
-                            className="logo"
-                            alt="myLogo">
-                            <h4 className="name_company text-center">CYB</h4>
-                        </div>
-                    </div>
-
-                    {/* Menu right */}
-                    <div className="navbar-right">
-                        <ul className="list-unstyled d-block">
+                        </li>
+                        <li>
                             <NavLink to="/support" className="link">
                                 <span>Support</span>
                             </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/login" className="link">
                                 <span>Login</span>
                             </NavLink>
-                        </ul>
-                    </div>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         );
     }
-
 }
 
 export default NavbarLink;

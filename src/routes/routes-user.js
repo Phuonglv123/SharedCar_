@@ -6,6 +6,7 @@ import IntroducePage from '../user/introduce_page/introduce_page';
 import TripsPage from '../user/trips_page/trips_page';
 import LoginPage from '../user/login_page/login_page';
 import SupportPage from '../user/support_page/support_page';
+import RegisterPage from '../user/register_page/register_page';
 
 
 const routesUser = [
@@ -20,6 +21,9 @@ const routesUser = [
     },
     {
         path: '/login', exact: true, main: () => <LoginPage/>
+    },
+    {
+        path: '/register', exact: true, main: () => <RegisterPage/>
     },
     {
         path: '/support', exact: true, main: () => <SupportPage/>

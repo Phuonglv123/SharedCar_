@@ -3,8 +3,7 @@
 $menu_line_width_hover:35%;
 $menu_line_height_hover:2px;
 $color_hover_line: $color_white;
-$distance_menu_logo:10px;
-$fontsize_name_company: 21px;
+$distance_menu_navbar:25px;
 
 
 a{
@@ -49,26 +48,15 @@ a{
     }
 }
 
-.navbar-nav{
-   margin-top: 32px;
-}
-
-.navbar-left{
-    margin-right: $distance_menu_logo;
-    a{
-        margin-right: 33px;
+.menuNavbar > ul{
+    li:not(nth-last-of-type){
+        margin-right: $distance_menu_navbar;
     }
-}
-.navbar-right{
-    margin-left: $distance_menu_logo;
-    a{
-        margin-left: 33px;
+    li{
+        font-weight: 500;
     }
 }
 
-.navbar-left,.navbar-right{
-    margin-top:31px;
-}
 
 
 // Logo
@@ -77,24 +65,13 @@ a{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 74px;
-    height: 110px;
-}
-.myLogo{
-    position: relative;
-    .name_company{
-        position: absolute;
-        bottom: -18px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-weight:600; 
-        font-size: $fontsize_name_company;
-    }
+    width: 60px;
+    height: 60px;
 }
 
 
 @media (max-width:768px){
-    .navbar-left,.navbar-right{
-        display: none;
+    .menuNavbar{
+        display: none !important;
     }
 }

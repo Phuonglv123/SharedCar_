@@ -12,12 +12,27 @@ a:hover{
 }
 
 #myNavbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    color: $color_white;
+    padding: 15px 0 12px 0
+}
+
+#myNavbar2{
     position: relative;
     top: 0;
     left: 0;
     z-index: 1;
     width: 100%;
     color: $color_white;
+    padding: 15px 0 12px 0
+}
+
+.changeColor{
+    background: $color_main !important;
 }
 
 

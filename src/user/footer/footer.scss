@@ -1,0 +1,26 @@
+@import '../../assets/styles/user/helpers/variable';
+
+
+#Footer{
+    background:$bg_color_footer;
+    padding: 25px 0;
+}
+
+.linkFooter{
+    li{
+        margin: 0 10px;
+    }
+    small{
+        color: $color_main;
+    }
+}
+
+.lineFooter{
+    color: $color_font_second;
+}
+
+.contentFooter{
+    small{
+        color:$color_font_second;
+    }
+}

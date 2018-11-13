@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import routesUser from '../routes/routes-user';
 import Navbar from './navbar/navbar';
+import Footer from './footer/footer';
 
 class RouteUser extends Component {
     render() {
@@ -10,16 +11,14 @@ class RouteUser extends Component {
             <Router>
                 <div>
                     <Navbar/>
-                   {this.loadRoute(routesUser)}
+                    {this.loadRoute(routesUser)}
+                    <Footer/>
                 </div>
             </Router>
         );
     }
 
-  
-
     loadRoute = (routes) => {
-        console.log(routes);
         let result = null;
         if(routes.length > 1){
             result = routes.map((route,i) => {
