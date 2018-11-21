@@ -1,13 +1,10 @@
 import * as types from '../constants/actionTypes';
 
-export const changeStatus = () => {
+export const getType = (type,step) => {
     return {
-        type: types.CHANGE_COLOR_NAVBAR
+        nameType: type,
+        step: step,
+        type: types.TYPE_USER
     }
 }
 
-export const changeStatusDefault = () => {
-    return {
-        type: types.CHANGE_COLOR_NAVBAR_DEFAULT
-    }
-}

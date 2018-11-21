@@ -6,9 +6,18 @@ $color_silver: #f7f7f7;
 $color_font_main: #313d48;
 $color_font_second2: #59687c;
 $color_font_second: #c0c0c0;
-$bg_color_footer:#313a47;
+$bg_color_footer: #313a47;
 
 //Padding
 $padding_section: 100px 0;
 $padding_div_title: 40px 0 0 0;
+
+@keyframes myFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 

@@ -25,7 +25,7 @@ const UseGuide = () => {
 
                             </div>
                             <div className="step1 d-flex align-items-center mt-5">
-                                <i class="fas fa-car"></i>
+                                <i className="fas fa-car"></i>
                                 <div className="ml-3">
                                     <p className="step_content">Step 2: Book Car</p>
                                     <p className="m-0">
@@ -35,7 +35,7 @@ const UseGuide = () => {
                                 </div>
                             </div>
                             <div className="step1 d-flex align-items-center mt-5">
-                                <i class="fas fa-location-arrow"></i>
+                                <i className="fas fa-location-arrow"></i>
                                 <div className="ml-3">
                                     <p className="step_content">Step 3: GO!</p>
                                     <p className="m-0">

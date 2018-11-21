@@ -1,0 +1,36 @@
+@import '../../assets/styles/user/helpers/variable';
+@import '../../assets//styles//user/helpers/extends';
+
+
+#LoginPage {
+    background: url("../../assets/images/user/login_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    padding: $padding_section;
+}
+
+.bg_login{
+    background:$bg_color_footer;
+    padding: 50px 15px;
+    height: auto;
+}
+
+.formLogin{
+    padding: 55px 90px 15px;
+}
+
+input{
+    @extend .myInput;
+}
+form{
+    @extend .lineHover;
+}
+
+.myBtn{
+    @extend .myButton;
+    margin-top:30px;
+}
+

@@ -1,0 +1,136 @@
+@import '../../assets/styles/user/helpers/variable';
+
+#Register{
+    background: url('../../assets/images/user/login_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    padding: $padding_section;
+}
+
+.bg_register{
+    background:$bg_color_footer;
+    padding: 70px 15px;
+}
+
+.title_register{
+    color:white;
+}
+
+.myForm{
+    max-width: 600px;
+    margin:0 auto;
+}
+
+//Aniamtion tab panel
+.tab-pane, .tab-content{
+    // overflow: hidden;
+}
+.tab-pane.active {
+    animation: myFade 0.8s ease-out;
+}
+
+
+
+#menu2{
+    overflow: inherit !important;
+}
+
+
+.nav-tabs{
+    background: $bg_color_footer !important;
+    border: 0;
+}
+.navlink{
+    border: none !important;
+    color: white;
+    padding: 45px 20px 30px;
+}
+.nav-link:hover{
+    cursor: default;
+}
+
+// active
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    color: $color_main;
+    background-color: $bg_color_footer
+}
+// hover
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+    border: none;
+    color: $color_main;
+}
+
+.tab-content{
+    background: $bg_color_footer;
+    padding: 40px 50px 0px 50px;
+}
+
+.stt{
+    width: 5px;
+    height: 5px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: white;
+    color: $bg_color_footer;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.linestt::before{
+    position: absolute;
+    content: '';
+    top: 14px;
+    left: -47px;
+    background:white;
+    width: 47px;
+    height: 1px;
+    z-index: 0;
+
+}
+
+.active{
+    .stt{
+        position: relative;
+        width: 5px;
+        height: 5px;
+        margin-right: 7px;
+        border-radius: 50%;
+        padding: 5px 10px;
+        background:$color_main;
+        color: white;
+    }
+    .linestt::before{
+        background:$color_main;
+    }
+}
+
+.title_signup{
+    background: $bg_color_footer;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.title_signup{
+    color:white;
+}
+
+.login{
+    color:$color_main;
+}
+.login:hover{
+    color:$color_main;
+}
+
+
+@media (max-width:768px){
+    .bg_register{
+        height: auto;
+    }
+    .tab-content{
+        padding: 40px 0px 0px 0px;
+    }
+}
