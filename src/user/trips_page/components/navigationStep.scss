@@ -1,0 +1,52 @@
+@import '../../../assets/styles/user/helpers/variable';
+
+
+#navigatorStep{
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+    padding: 30px 0;
+}
+
+.navitem-trips{
+    margin-right:80px;
+}
+
+.navlink-trips{
+    padding:0;
+}
+.navlink-trips.active{
+    border-color:white !important;
+}
+.navlink-trips:hover{
+    border-color: white !important;
+}
+
+.tab-trips{
+    border:1px solid white;
+}
+
+
+.stt-trips{
+    width: 5px;
+    height: 5px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #999;
+    color: white;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.title-nav{
+    color: $color_font_main;
+}
+
+.navlink-trips.active{
+    .stt-trips{
+        background: $color_main !important;
+        color:white;
+    }
+    .title-nav{
+        color:$color_main !important;
+    }
+}

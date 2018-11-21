@@ -1,13 +1,16 @@
 @import '../../../assets/styles/user/helpers/variable';
 
-
-
-
-svg{
-    color : #28a745;
-    font-size: 100px !important;
+#divsuccess {
+    .sucesscircle {
+       
+    }
+    svg {
+        color: $color_main;
+        font-size: 75px !important;
+        margin-top: 27px;
+    }
 }
 
-h2{
-    color:white;
+h4 {
+    color: white;
 }

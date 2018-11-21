@@ -5,8 +5,10 @@ import { NavLink } from 'react-router-dom';
 const finishReg = () => {
     return (
         <div className="text-center" id="divsuccess">
-            <i className="far fa-check-circle aaaa"></i>
-            <h2 className="mt-4">Registered successfully</h2>
+            <div className="sucesscircle m-auto">
+                <i class="fas fa-check"></i>
+                <h4 className="mt-2">Successfully</h4>
+            </div>
         </div>
     );
 };

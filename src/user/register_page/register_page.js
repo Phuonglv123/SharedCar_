@@ -79,24 +79,24 @@ class RegisterPage extends Component {
                             </NavLink>
                         </p>
                         {/* Progress */}
-                        <ul className="nav nav-tabs d-flex justify-content-center">
+                        <ul className="nav nav-tabs tab-register d-flex justify-content-center">
                             <div>
                                 <li className="nav-item active">
-                                    <a className="nav-link navlink" data-toggle="tab" href="#menu1">
+                                    <a className="nav-link navlink-register" data-toggle="tab" href="#menu1">
                                         <span className="stt">1</span>
                                     </a>
                                 </li>
                             </div>
                             <div>
                                 <li className="nav-item">
-                                    <a className="nav-link navlink" data-toggle="tab" href="#menu2">
+                                    <a className="nav-link navlink-register" data-toggle="tab" href="#menu2">
                                         <span className="stt linestt">2</span>
                                     </a>
                                 </li>
                             </div>
                             <div>
                                 <li className="nav-item">
-                                    <a className="nav-link navlink" data-toggle="tab" href="#menu3">
+                                    <a className="nav-link navlink-register" data-toggle="tab" href="#menu3">
                                         <span className="stt linestt">3</span>
                                     </a>
                                 </li>

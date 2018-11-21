@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 class LoginPage extends Component {
 
-    checkActive = (val) => {}
 
     autoScrollDiv = (iddiv) => {
         $('html,body').animate({
@@ -14,7 +13,6 @@ class LoginPage extends Component {
     }
 
     componentDidMount = () => {
-        console.log("a");
         this.autoScrollDiv("LoginPage");
     }
 

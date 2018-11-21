@@ -39,26 +39,26 @@
 }
 
 
-.nav-tabs{
+.tab-register{
     background: $bg_color_footer !important;
     border: 0;
 }
-.navlink{
+.navlink-register{
     border: none !important;
     color: white;
     padding: 45px 20px 30px;
 }
-.nav-link:hover{
+.navlink-register:hover{
     cursor: default;
 }
 
 // active
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+.navlink-register.active{
     color: $color_main;
-    background-color: $bg_color_footer
+    background-color: $bg_color_footer !important;
 }
 // hover
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+.nav-tabs .navlink-register:focus, .nav-tabs .navlink-register:hover{
     border: none;
     color: $color_main;
 }
