@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURL : 'mongodb://admin123:admin123@ds143953.mlab.com:43953/sharedtaxi'
+    mongoURL : 'mongodb://user:0989744720p@ds133762.mlab.com:33762/share_car_fs'
 }
