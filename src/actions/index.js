@@ -18,7 +18,7 @@ export const registerPassenger = (passenger) => dispatch => {
     axios.post('http://localhost:3000/api/passenger/register', passenger)
         .then(res => dispatch({
             type: GET_ERRORS,
-            payload: res.data
+            payload: res.data,
         }))
         .catch(err => {
             if (err.response) {
@@ -28,6 +28,7 @@ export const registerPassenger = (passenger) => dispatch => {
                 })
             }
         });
+    alert('Register successfully');
 };
 
 // login user
