@@ -1,16 +1,37 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {loginAccount} from "../../actions/index";
 import './login_page.scss';
 
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import typeRegister from "../../reducers/typeRegister";
 
 class LoginPage extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+            errors: {}
+        }
+    }
+    componentWillReceiveProps = (nextProps) =>{
+        if (nextProps.auth.isAuthenticated){
+            this.props.history.push('/')
+        }
+    }
 
     autoScrollDiv = (iddiv) => {
         $('html,body').animate({
-            scrollTop: $(`#${iddiv}`).offset().top},
+                scrollTop: $(`#${iddiv}`).offset().top
+            },
             'slow');
-    }
+    };
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    };
 
     componentDidMount = () => {
         this.autoScrollDiv("LoginPage");
@@ -18,6 +39,16 @@ class LoginPage extends Component {
 
     componentDidUpdate = () => {
         this.autoScrollDiv("LoginPage")
+    }
+    onSubmit = (e) => {
+        e.preventDefault();
+        let {username, password} = this.state;
+        const account = {
+            username, password
+        }
+
+        this.props.loginAccount(account);
+
     }
 
     render() {
@@ -32,17 +63,17 @@ class LoginPage extends Component {
                             </NavLink>
                         </p>
 
-                        <form className="formLogin">
+                        <form className="formLogin" onSubmit={this.onSubmit}>
                             <div className="group">
-                              <input type="text" name="username" required/>
-                              <label className="label">Username</label>
-                              <div className="bar"></div>
+                                <input type="text" name="username" id="username" required onChange={this.onChange}/>
+                                <label className="label">Username</label>
+                                <div className="bar"></div>
                             </div>
 
                             <div className="group">
-                              <input type="text" name="username" required/>
-                              <label className="label">Password</label>
-                              <div className="bar"></div>
+                                <input type="text" name="password" id="password" onChange={this.onChange} required/>
+                                <label className="label">Password</label>
+                                <div className="bar"></div>
                             </div>
                             <div className="text-center">
                                 <button className="loginnow myBtn" type="submit">Login</button>
@@ -56,4 +87,12 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+const mapStateToProps = (state)=>{
+    return{
+        auth: state.typeRegister,
+        errors: state.errorsReducer
+
+    }
+}
+
+export default connect(mapStateToProps, {loginAccount})(LoginPage);

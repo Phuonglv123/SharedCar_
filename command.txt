@@ -1,1 +1,10 @@
 npm i bcryptjs express validator mongoose body-parser jsonwebtoken bcrypt passport-jwt
+
+
+Account database Mlab:
+id: vanphuong479@gmail.com
+pass: 0989744720p
+
+deployment: share_car_fs
+id: user
+pass: 0989744720p

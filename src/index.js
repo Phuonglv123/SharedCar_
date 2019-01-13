@@ -18,10 +18,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import '@fortawesome/fontawesome-free/js/all.min';
 // my css
 import './index.scss';
+import store from './store'
 
-const store = createStore(
-    appReducers,
-)
+// const store = createStore(
+//     appReducers,
+// )
 
 ReactDOM.render(
     <Provider store={store}>

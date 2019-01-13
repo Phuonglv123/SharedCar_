@@ -1,33 +1,56 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../../actions/index';
+import classnames from 'classnames';
+import {connect} from 'react-redux';
+import {registerPassenger} from "../../../actions/index";
 
 
 class FormRegister extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            password: "",
+            confirmedpassword: "",
+            fullname: "",
+            phone: "",
+            // gender: "",
+            birthday: "",
+            errors: {},
+        }
+    }
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.submitRes(this.props.typeRegister.type);
-    }
+        let {username, password, confirmedpassword, fullname, phone, birthday, } = this.state;
+        const passenger = {
+            username, password, confirmedpassword, fullname, phone, birthday
+        }
+        this.props.registerPassenger(passenger);
+    };
 
     render() {
+        const {errors} = this.props;
         return (
             <form className="formRegister" onSubmit={this.onSubmit}>
                 <div className="group">
-                    <input type="text" name="username" required="required"/>
+                    <input type="text" name="username" required="required" onChange={this.onChange}/>
                     <label className="label">Username</label>
                     <div className="bar"></div>
                 </div>
 
                 <div className="group">
-                    <input type="text" name="password" required="required"/>
+                    <input type="text" name="password" required="required" onChange={this.onChange}/>
                     <label className="label">Password</label>
                     <div className="bar"></div>
                 </div>
 
                 <div className="group">
-                    <input type="text" name="repass" required="required"/>
+                    <input type="text" name="confirmedpassword" required="required" onChange={this.onChange}/>
                     <label className="label">Re-Password</label>
                     <div className="bar"></div>
                 </div>
@@ -35,28 +58,28 @@ class FormRegister extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="group">
-                            <input type="text" name="firstname" required="required"/>
+                            <input type="text" name="fullname" required="required" onChange={this.onChange}/>
                             <label className="label">First name</label>
                             <div className="bar"></div>
                         </div>
                     </div>
+                    {/*<div className="col-md-6">*/}
+                        {/*<div className="group">*/}
+                            {/*<input type="text" name="lastname" required="required" onChange={this.onChange}/>*/}
+                            {/*<label className="label">Last name</label>*/}
+                            {/*<div className="bar"></div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
                     <div className="col-md-6">
                         <div className="group">
-                            <input type="text" name="lastname" required="required"/>
-                            <label className="label">Last name</label>
-                            <div className="bar"></div>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="group">
-                            <input type="text" name="phone" required="required"/>
+                            <input type="text" name="phone" required="required" onChange={this.onChange}/>
                             <label className="label">Phone</label>
                             <div className="bar"></div>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="group">
-                            <input type="text" name="birthday" required="required"/>
+                            <input type="text" name="birthday" required="required" onChange={this.onChange}/>
                             <label className="label">Birthday</label>
                             <div className="bar"></div>
                         </div>
@@ -72,17 +95,18 @@ class FormRegister extends Component {
 }
 
 const mapStateToProp = (state) => {
-    return{
-        typeRegister: state.typeRegister
+    return {
+        typeRegister: state.typeRegister,
+        errors: state.errorsReducer,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return{
+    return {
         submitRes: (type) => {
-            dispatch(actions.getType(type,3))
+            dispatch(actions.getType(type, 3))
         }
     }
 }
 
-export default connect(mapStateToProp,mapDispatchToProps)(FormRegister);
+export default connect(mapStateToProp, {registerPassenger})(FormRegister);

@@ -1,19 +1,27 @@
-import * as types from '../constants/actionTypes';
+import {TYPE_USER} from "../constants/actionTypes";
 
-let initialState = null
+let initialState = {
+    isAuthenticated: false,
+    passenger: {}
+}
 
 let myReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.TYPE_USER:
+        case TYPE_USER:
             state = {
                 type: action.nameType,
                 step: action.step
             }
-            return state;
+            return {
+                ...state,
+                isAuthenticated: true,
+                passenger:action.payload
+            };
     
         default:
-            return state;
+            break;
     }
+    return state;
 }
 
 
