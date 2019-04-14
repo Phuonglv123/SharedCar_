@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "clear": "rimraf build",
     "serve": "nodemon ./server/server.js"
   },
   "author": "",
