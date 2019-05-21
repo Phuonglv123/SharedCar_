@@ -7,7 +7,8 @@ module.exports = function validatorPassRegis(data) {
     data.username = !isEmpty(data.username) ? data.username : "";
     data.password = !isEmpty(data.password) ? data.password : "";
     data.confirmedpassword = !isEmpty(data.confirmedpassword) ? data.confirmedpassword : "";
-    data.fullname = !isEmpty(data.fullname) ? data.fullname : "";
+    data.firstname = !isEmpty(data.firstname) ? data.firstname : "";
+    data.lastname = !isEmpty(data.lastname) ? data.lastname : "";
     data.phone = !isEmpty(data.phone) ? data.phone : "";
     data.birthday = !isEmpty(data.birthday) ? data.birthday : "";
 
@@ -28,8 +29,12 @@ module.exports = function validatorPassRegis(data) {
     if (!validator.equals(data.password, data.confirmedpassword)) {
         errors.confirmedpassword = 'Password is match';
     }
-    if (validator.isEmpty(data.fullname)) {
-        errors.fullname = 'Fullname is valid';
+    if (validator.isEmpty(data.firstname)) {
+        errors.firstname = 'firstname is valid';
+
+    }
+    if (validator.isEmpty(data.lastname)) {
+        errors.lastname = 'lastname is valid';
 
     }
     if (validator.isEmpty(data.phone)) {

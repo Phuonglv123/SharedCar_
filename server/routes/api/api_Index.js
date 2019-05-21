@@ -51,7 +51,15 @@ router.post('/login', (req, res) => {
                             // res.json({ success: true, token })
 
                         } else {
-                            return res.status(404).json({password: 'Password incorrect'})
+                            return res.status(404).json({
+                                code: 400,
+                                message: null,
+                                detail: {
+                                    globalErrors:
+                                        "Unable to log in with provided credentials."
+
+                                }
+                            })
                         }
                     })
             }
