@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         required: true
     },
     accountType:{
-        type: Number, // 1 driver, 2: passenger
+        type: String, // 1 driver, 2: passenger
         required: true,
         // default: 2
     },

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const validatorPassRegis = require('../../validations/passengerRegister');
 
 
 // load model
@@ -16,9 +17,15 @@ router.get('/', (req, res) => {
 // route    POST localhost:4000/api/driver/register
 // desc     register new driver
 // access   PUBLIC
-router.post('/register', (req, res) => {
-    const {username, password, fullname, phone, birthday} = req.body;
-    User.findOne({username: username})
+router.post('/register', async (req, res) => {
+
+    const {errors, isValid} = validatorPassRegis(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    const {username, password, firstname, lastname, phone, birthday} = req.body;
+    await User.findOne({username: username})
         .then(accountdriver => {
             if (accountdriver) {
                 res.json({msg: "username is does exits"});
@@ -29,10 +36,16 @@ router.post('/register', (req, res) => {
         .then(phone => {
             if (phone) {
                 res.json({msg: "Phone is does exits "})
-            }
-            else {
+            } else {
                 const NewaccountDriver = new User({
-                    username, password, fullname, birthday, accountType: 2, isActive: true, phone: req.body.phone
+                    username,
+                    password,
+                    firstname,
+                    lastname,
+                    birthday,
+                    accountType: 'driver',
+                    isActive: true,
+                    phone: req.body.phone
                 });
                 bcrypt.genSalt(10, (err, salt) => {
                     if (err) return console.log(err);

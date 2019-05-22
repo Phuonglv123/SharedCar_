@@ -47,9 +47,6 @@ router.post('/login', (req, res) => {
                                     })
                                 }
                             )
-
-                            // res.json({ success: true, token })
-
                         } else {
                             return res.status(404).json({
                                 code: 400,
@@ -57,7 +54,6 @@ router.post('/login', (req, res) => {
                                 detail: {
                                     globalErrors:
                                         "Unable to log in with provided credentials."
-
                                 }
                             })
                         }
