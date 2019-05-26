@@ -8,6 +8,18 @@ const Passenger = require('../../models/accountPassenger');
 const AccountDriver = require('../../models/accountDriver');
 const Trips = require('../../models/trips');
 
+
+router.get('/allroute', (req, res) => {
+    Trips.find({}, function (err, data) {
+        if (err) {
+            console.log(err);
+            return res.send(400, 'no list')
+        } else {
+            res.json(data)
+        }
+    })
+})
+
 // route    POST api/trips/create
 // desc     Create a trip
 // access   Private

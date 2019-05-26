@@ -4,7 +4,7 @@ const TripSchema = new mongoose.Schema({
     driverID: {type: String, required: true},
     locationFrom: {type: String, required: true},
     locationTo: {type: String, required: true},
-    startTime: {type: Date, required: true},
+    startTime: {type: String, required: true},
     options: {
         wifi: {type: Boolean, required: true},
         music: {type: Boolean, required: true},
