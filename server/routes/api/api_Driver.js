@@ -68,7 +68,7 @@ router.get('/detail/:id', (req, res) => {
     const errors = {};
     const id = req.params.id;
 
-    Account.findById(id)
+    AccountDriver.findById(id)
         .then(user => {
             AccountDriver.findOne({accountID: user._id})
                 .then(accountdriver => {
@@ -87,9 +87,9 @@ router.get('/detail/:id', (req, res) => {
 // desc     register new account
 // access   PUBLIC
 
-router.post('/detail/register', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.post('/detail', passport.authenticate('jwt', {session: false}), (req, res) => {
     const id = req.user.id;
-    const {birthday, address, passportID, company, model, carInfo, manufacturingYear, licensePlate, numberOfSeats} = req.body;
+    const {birthday, gender, address, passportID, company, model, carInfo, manufacturingYear, licensePlate, numberOfSeats} = req.body;
     AccountDriver.findOne({accountID: id})
         .then(account => {
             if (account) {
@@ -99,7 +99,9 @@ router.post('/detail/register', passport.authenticate('jwt', {session: false}), 
                 carInfo = {...carInfo, model, manufacturingYear, licensePlate, numberOfSeats}
                 const newDriver = new AccountDriver({
                     accountID: id,
-                    birthday, address, passportID, company, registerDate: new Date().getTime(),
+                    gender,
+                    birthday,
+                    address, passportID, company, registerDate: new Date().getTime(),
                     numberOfTrips: 0,
                     carInfo
                 })
@@ -108,7 +110,7 @@ router.post('/detail/register', passport.authenticate('jwt', {session: false}), 
                     .catch(err => console.log(err));
             }
         })
-});
+})
 
 
 module.exports = router;

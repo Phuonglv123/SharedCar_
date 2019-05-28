@@ -11,14 +11,14 @@ const Passenger = require('../../models/accountPassenger');
 
 
 // route POST localhost:3000/api/passenger/register
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
     const {errors, isValid} = validatorPassRegis(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
     }
 
     // const {username, password, fullname, phone, birthday} = req.body;
-    User.findOne({username: req.body.username})
+    await User.findOne({username: req.body.username})
         .then(user => {
             if (user) {
                 return res.json({msg: 'Username does exits'})

@@ -47,7 +47,9 @@ router.post('/create', passport.authenticate('jwt', {session: false}), (req, res
                     startTime: req.body.startTime,
                     options,
                     availableSeats: req.body.availableSeats,
-                    finish: false
+                    finish: false,
+                    fee: req.body.fee,
+                    endTime: req.body.endTime
                 });
 
                 newTrip.save()

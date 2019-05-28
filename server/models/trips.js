@@ -5,6 +5,7 @@ const TripSchema = new mongoose.Schema({
     locationFrom: {type: String, required: true},
     locationTo: {type: String, required: true},
     startTime: {type: String, required: true},
+    endTime: {type: String, required: true},
     options: {
         wifi: {type: Boolean, required: true},
         music: {type: Boolean, required: true},
@@ -14,7 +15,7 @@ const TripSchema = new mongoose.Schema({
         wetTowel: {type: Boolean, required: true}
     },
     availableSeats: {type: Number, required: true},
-    fee: {type: Number},
+    fee: {type: Number, required: true},
     passengers: [{
         passengerID: {type: String},
         locationGetIn: {type: String},

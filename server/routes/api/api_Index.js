@@ -13,11 +13,11 @@ router.get('/', (req, res, next) => {
     res.json({msg: 'login test'})
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    User.findOne({username: username})
+    await User.findOne({username: username})
         .then(user => {
             if (!user) {
                 return res.status(404).json({email: "user not found"})
