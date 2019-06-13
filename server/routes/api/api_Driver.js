@@ -73,7 +73,7 @@ router.get('/detail/:id', (req, res) => {
             AccountDriver.findOne({accountID: user._id})
                 .then(accountdriver => {
                     if (!accountdriver) {
-                        errors.noProfile = 'There is no profile for this driver'
+                        errors.noProfile = 'There is no profile for this driver';
                         return res.status(404).json(errors);
                     } else {
                         res.json(accountdriver);
@@ -81,7 +81,7 @@ router.get('/detail/:id', (req, res) => {
                 })
         })
 
-})
+});
 
 // route    POST localhost:4000/api/driver/detail
 // desc     register new account
@@ -96,7 +96,7 @@ router.post('/detail', passport.authenticate('jwt', {session: false}), (req, res
                 return res.json({msg: "Accounr da co"})
             } else {
                 let carInfo = {};
-                carInfo = {...carInfo, model, manufacturingYear, licensePlate, numberOfSeats}
+                carInfo = {...carInfo, model, manufacturingYear, licensePlate, numberOfSeats};
                 const newDriver = new AccountDriver({
                     accountID: id,
                     gender,
@@ -104,13 +104,13 @@ router.post('/detail', passport.authenticate('jwt', {session: false}), (req, res
                     address, passportID, company, registerDate: new Date().getTime(),
                     numberOfTrips: 0,
                     carInfo
-                })
+                });
                 newDriver.save()
                     .then(driver => res.json({driver}))
                     .catch(err => console.log(err));
             }
         })
-})
+});
 
 
 module.exports = router;

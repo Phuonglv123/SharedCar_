@@ -49,7 +49,7 @@ router.post('/register', async (req, res) => {
                                     birthday: req.body.birthday,
                                     registerday: new Date().getTime(),
                                     numberOfTrips: 0
-                                })
+                                });
                                 newPassenger.save()
                                     .then(passenger => {
                                         res.json({user, passenger})
@@ -78,18 +78,17 @@ router.post('/edit', passport.authenticate('jwt', {session: false}), (req, res) 
     User.findById(req.user._id)
         .then(user => {
             if (user) {
-                user.email = email,
-                    user.password = password,
-                    user.fullname = fullname,
-                    user.birthday = birthday,
-                    user.phone = phone,
-
+                user.email = email;
+                    user.password = password;
+                    user.fullname = fullname;
+                    user.birthday = birthday;
+                    user.phone = phone;
                     user.save()
                         .then(user => res.json(user))
                         .catch(err => console.log(err))
             }
         })
-})
+});
 
 module.exports = router;
 
