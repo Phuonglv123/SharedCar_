@@ -3,7 +3,6 @@ const router = express.Router();
 const passport = require('passport');
 
 // load model
-const User = require('../../models/user');
 const Passenger = require('../../models/accountPassenger');
 const AccountDriver = require('../../models/accountDriver');
 const Trips = require('../../models/trips');
@@ -18,7 +17,7 @@ router.get('/allroute', (req, res) => {
             res.json(data)
         }
     })
-})
+});
 
 // route    POST api/trips/create
 // desc     Create a trip
@@ -76,7 +75,7 @@ router.post('/book/:id', passport.authenticate('jwt', {session: false}), (req, r
                         paymentMethod: req.body.paymentMethod,
                         numberOfBookingSeats: req.body.numberOfBookingSeats,
                         notes: req.body.notes
-                    }
+                    };
                     trip.passengers.push(newPassenger);
 
                     trip.save()
@@ -96,7 +95,7 @@ router.post('/finish/:id', passport.authenticate('jwt', {session: false}), (req,
         .then(driver => {
             Trips.findById(req.params.id)
                 .then(trip => {
-                    if (trip.driverID == driver._id) {
+                    if (trip.driverID === driver._id) {
                         driver.numberOfTrips += 1;
                         driver.save()
                             .then(() => {
@@ -122,18 +121,17 @@ router.post('/rate/:id', passport.authenticate('jwt', {session: false}), (req, r
                 passengerID: passenger._id,
                 rated: req.body.rated,
                 comments: req.body.comments
-            }
-            console.log(passengerRate)
+            };
             Trip.findById(req.params.id)
                 .then(trip => {
                     Driver.findById(trip.driverID)
                         .then(driver => {
-                            driver.passengersRate.push(passengerRate)
+                            driver.passengersRate.push(passengerRate);
                             driver.save()
                                 .then(updatedDriver => res.json(updatedDriver))
                         })
                 })
         })
-})
+});
 
 module.exports = router;

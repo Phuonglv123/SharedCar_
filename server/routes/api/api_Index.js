@@ -6,12 +6,10 @@ const keys = require('../../config/key');
 
 //load model
 const User = require('../../models/user');
-const Passenger = require('../../models/accountPassenger');
-const AccountDriver = require('../../models/accountDriver');
 
 router.get('/', (req, res, next) => {
     res.json({msg: 'login test'})
-})
+});
 
 router.post('/login', async (req, res) => {
     const username = req.body.username;
@@ -38,7 +36,7 @@ router.post('/login', async (req, res) => {
                                 keys.secretOrKey,
                                 {expiresIn: 3600},
                                 (err, token) => {
-                                    console.log("payload 2:", payload)
+                                    console.log("payload 2:", payload);
                                     res.json({
                                         payload,
                                         user,
@@ -60,6 +58,6 @@ router.post('/login', async (req, res) => {
                     })
             }
         })
-})
+});
 
 module.exports = router;
